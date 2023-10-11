@@ -9,27 +9,47 @@ import com.microsoft.sqlserver.jdbc.*;
 public class principal 
 {
 
+	private static Connection con;
+	
 	public static void main(String[] args) throws SQLException, IOException 
 	{
-		//cargaMontes();
+		openConection();
+		cargaMontes();
 		Consulta_A();
 		Consulta_B();
 		Consulta_C();
+		closeConection();
 		
 		System.out.println("Ejecución Finalizada");
 	}
 
-	public static void cargaMontes() throws SQLException, IOException 
-	{		
+	public static void openConection()
+	{
 		SQLServerDataSource ds = new SQLServerDataSource();
 		ds.setIntegratedSecurity(true);
 		ds.setServerName("localhost");
 		ds.setPortNumber(1433);
 		ds.setDatabaseName("rediam");
-		Connection con = ds.getConnection();
-		
-		String sql = "INSERT INTO Montes (CODIGO_MONTE, COD_PROVINCIA, ESPACIO_NATURAL, SUPERFICIE, NUMERO_MONTES) VALUES (?, ?, ?, ?, ?)";
-		PreparedStatement pstmt = con.prepareStatement(sql);
+		try {
+			con = ds.getConnection();
+		} catch (SQLServerException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public static void closeConection() 
+	{
+		try {
+			con.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public static void cargaMontes() throws SQLException, IOException 
+	{		
+		String consulta = "INSERT INTO Montes (CODIGO_MONTE, COD_PROVINCIA, ESPACIO_NATURAL, SUPERFICIE, NUMERO_MONTES) VALUES (?, ?, ?, ?, ?)";
+		PreparedStatement pstmt = con.prepareStatement(consulta);
 		Scanner sc = new Scanner(new File("montes.txt"));
 		
 		while(sc.hasNext())
@@ -48,18 +68,10 @@ public class principal
 		
 		sc.close();
 		pstmt.close();
-		con.close();
 	}
 	
 	public static void Consulta_A() throws SQLException
 	{
-		SQLServerDataSource ds = new SQLServerDataSource();
-		ds.setIntegratedSecurity(true);
-		ds.setServerName("localhost");
-		ds.setPortNumber(1433);
-		ds.setDatabaseName("rediam");
-		Connection con = ds.getConnection();
-		
 		Statement stmt = con.createStatement();
 		
 		ResultSet rset = stmt.executeQuery("SELECT Provincia, ESPACIO_NATURAL, SUPERFICIE FROM Montes, Provincias"
@@ -80,7 +92,6 @@ public class principal
 		
 		rset.close();
 		stmt.close();
-		con.close();	
 	}
 	public static void Consulta_B() throws SQLException
 	{
@@ -88,13 +99,6 @@ public class principal
 		
 		System.out.println("Introduzca un codigo de provincia: ");
 		String codProv = sc.next();
-		
-		SQLServerDataSource ds = new SQLServerDataSource();
-		ds.setIntegratedSecurity(true);
-		ds.setServerName("localhost");
-		ds.setPortNumber(1433);
-		ds.setDatabaseName("rediam");
-		Connection con = ds.getConnection();
 		
 		String consulta = "SELECT Provincia, ESPACIO_NATURAL, NUMERO_MONTES FROM Montes,Provincias WHERE "
 				+ "COD_PROVINCIA = Codigo and  ? = COD_PROVINCIA;";
@@ -118,13 +122,6 @@ public class principal
 	
 	public static void Consulta_C() throws SQLException
 	{
-		SQLServerDataSource ds = new SQLServerDataSource();
-		ds.setIntegratedSecurity(true);
-		ds.setServerName("localhost");
-		ds.setPortNumber(1433);
-		ds.setDatabaseName("rediam");
-		Connection con = ds.getConnection();
-		
 		String consulta = "SELECT Provincia, sum(SUPERFICIE) Superficie_Total, SUM(NUMERO_MONTES) Montes_Total FROM Montes,Provincias WHERE "
 				+ "COD_PROVINCIA = Codigo GROUP BY Provincia;";
 		
@@ -141,6 +138,5 @@ public class principal
 		
 		rset.close();
 		stmt.close();
-		con.close();
 	}
 }
