@@ -60,7 +60,7 @@ public class principal
 			pstmt.setInt(1, Integer.parseInt(sections[0]));
 			pstmt.setString(2, sections[1]);
 			pstmt.setString(3, sections[2]);
-			pstmt.setInt(4, Integer.parseInt(sections[3]));
+			pstmt.setDouble(4, Integer.parseInt(sections[3]));
 			pstmt.setInt(5, Integer.parseInt(sections[4]));
 			
 			pstmt.executeUpdate();
@@ -75,7 +75,7 @@ public class principal
 		Statement stmt = con.createStatement();
 		
 		ResultSet rset = stmt.executeQuery("SELECT Provincia, ESPACIO_NATURAL, SUPERFICIE FROM Montes, Provincias"
-				+ " where COD_PROVINCIA = Codigo and SUPERFICIE >= 10000;");
+				+ " where COD_PROVINCIA = Codigo and SUPERFICIE > 10000;");
 		
 		String preProv = "";
 		while (rset.next())
@@ -87,7 +87,7 @@ public class principal
 				preProv = prov;
 			}
 			System.out.println(
-					"\t" + rset.getString("Espacio_natural") + "\t" + rset.getInt("Superficie") );
+					"\t" + rset.getString("Espacio_natural") + "\t" + rset.getDouble("Superficie") );
 		} 
 		
 		rset.close();
@@ -111,7 +111,7 @@ public class principal
 		if(rset.next())
 		{
 			String prov = rset.getString("Provincia");
-			System.out.println("ESPACIOS NATURALES CON MAS DE 10000m2 de " + prov);
+			System.out.println("ESPACIOS NATURALES de " + prov);
 			do
 			{
 				System.out.println(
@@ -132,7 +132,7 @@ public class principal
 		while(rset.next())
 		{
 			System.out.println("PROVINCIA: " + rset.getString("Provincia") 
-				+ "\n\t" + "TOTAL SUPERFICIE: " + rset.getInt("Superficie_Total") 
+				+ "\n\t" + "TOTAL SUPERFICIE: " + rset.getDouble("Superficie_Total") 
 				+ "\n\t" + "TOTAL NUMERO MONTES: " + rset.getInt("Montes_Total"));
 		}
 		
