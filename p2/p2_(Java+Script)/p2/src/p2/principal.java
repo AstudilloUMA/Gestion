@@ -100,7 +100,7 @@ public class principal
 		System.out.println("Introduzca un codigo de provincia: ");
 		String codProv = sc.next();
 		
-		String consulta = "SELECT Provincia, ESPACIO_NATURAL, NUMERO_MONTES FROM Montes,Provincias WHERE "
+		String consulta = "SELECT Provincia, ESPACIO_NATURAL, SUPERFICIE, NUMERO_MONTES FROM Montes,Provincias WHERE "
 				+ "COD_PROVINCIA = Codigo and  ? = COD_PROVINCIA;";
 		
 		PreparedStatement pstmt = con.prepareStatement(consulta);
@@ -115,7 +115,7 @@ public class principal
 			do
 			{
 				System.out.println(
-						"\t" + rset.getString("Espacio_Natural") + "\t" + rset.getInt("Numero_montes"));
+						"\t" + rset.getString("Espacio_Natural") + "\t" + rset.getString("Superficie") + "\t" + rset.getInt("Numero_montes"));
 			} while(rset.next());
 		}
 	}

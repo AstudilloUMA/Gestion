@@ -58,7 +58,7 @@ public class Provincia
 	public void setProvincia(String value) 
 	{
 		BD database = new BD(BD_SERVER,BD_NAME);
-		database.Update("UPDATE tProvinica SET Nombre = '" + value + "' WHERE Codigo = '" + this.codigo + "';");
+		database.Update("UPDATE tProvincia SET Nombre = '" + value + "' WHERE Codigo = '" + this.codigo + "';");
 		this.nombre = value;
 	}
 	
