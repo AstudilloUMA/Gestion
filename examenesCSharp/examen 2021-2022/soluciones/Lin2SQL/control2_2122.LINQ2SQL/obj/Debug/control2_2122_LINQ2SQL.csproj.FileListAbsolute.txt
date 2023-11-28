@@ -1,0 +1,10 @@
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\obj\Debug\control2_2122_LINQ2SQL.Properties.Resources.resources
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\obj\Debug\control2_2122_LINQ2SQL.PRUEBAS.resources
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\obj\Debug\control2_2122_LINQ2SQL.csproj.GenerateResource.cache
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\obj\Debug\control2_2122_LINQ2SQL.csproj.CoreCompileInputs.cache
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\bin\Debug\control2_2122_LINQ2SQL.exe.config
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\bin\Debug\control2_2122_LINQ2SQL.exe
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\bin\Debug\control2_2122_LINQ2SQL.pdb
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\obj\Debug\control2_2122_LINQ2SQL.exe
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\obj\Debug\control2_2122_LINQ2SQL.pdb
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.LINQ2SQL\obj\Debug\control2_2122_LINQ2SQL.csproj.AssemblyReference.cache

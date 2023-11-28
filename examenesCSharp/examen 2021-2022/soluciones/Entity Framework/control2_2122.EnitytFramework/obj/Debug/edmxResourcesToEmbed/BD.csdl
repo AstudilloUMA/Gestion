@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="control2_2122Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tPaciente">
+    <Key>
+      <PropertyRef Name="NIF" />
+    </Key>
+    <Property Name="NIF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumSeguro" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Direccion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Provincia" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodigoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="e_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tProvincia" Relationship="Self.FK_tPaciente_tProvincia" FromRole="tPaciente" ToRole="tProvincia" />
+    <NavigationProperty Name="tPruebas" Relationship="Self.FK_tPruebas_tPaciente" FromRole="tPaciente" ToRole="tPruebas" />
+  </EntityType>
+  <EntityType Name="tProvincia">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tPaciente" Relationship="Self.FK_tPaciente_tProvincia" FromRole="tProvincia" ToRole="tPaciente" />
+  </EntityType>
+  <EntityType Name="tPruebas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NIF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_hora" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="valor_glucosa" Type="Single" />
+    <NavigationProperty Name="tPaciente" Relationship="Self.FK_tPruebas_tPaciente" FromRole="tPruebas" ToRole="tPaciente" />
+  </EntityType>
+  <EntityType Name="tReferenciasGlucosa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="desde" Type="Single" Nullable="false" />
+    <Property Name="hasta" Type="Single" Nullable="false" />
+    <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tPaciente_tProvincia">
+    <End Role="tProvincia" Type="Self.tProvincia" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tPaciente" Type="Self.tPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tProvincia">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="tPaciente">
+        <PropertyRef Name="Provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tPruebas_tPaciente">
+    <End Role="tPaciente" Type="Self.tPaciente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tPruebas" Type="Self.tPruebas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tPaciente">
+        <PropertyRef Name="NIF" />
+      </Principal>
+      <Dependent Role="tPruebas">
+        <PropertyRef Name="NIF" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="control2_2122Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tPaciente" EntityType="Self.tPaciente" />
+    <EntitySet Name="tProvincia" EntityType="Self.tProvincia" />
+    <EntitySet Name="tPruebas" EntityType="Self.tPruebas" />
+    <EntitySet Name="tReferenciasGlucosa" EntityType="Self.tReferenciasGlucosa" />
+    <AssociationSet Name="FK_tPaciente_tProvincia" Association="Self.FK_tPaciente_tProvincia">
+      <End Role="tProvincia" EntitySet="tProvincia" />
+      <End Role="tPaciente" EntitySet="tPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tPruebas_tPaciente" Association="Self.FK_tPruebas_tPaciente">
+      <End Role="tPaciente" EntitySet="tPaciente" />
+      <End Role="tPruebas" EntitySet="tPruebas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

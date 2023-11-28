@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="control2_2122ModelStoreContainer" CdmEntityContainer="control2_2122Entities">
+    <EntitySetMapping Name="tPaciente">
+      <EntityTypeMapping TypeName="control2_2122Model.tPaciente">
+        <MappingFragment StoreEntitySet="tPaciente">
+          <ScalarProperty Name="NIF" ColumnName="NIF" />
+          <ScalarProperty Name="NumSeguro" ColumnName="NumSeguro" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tProvincia">
+      <EntityTypeMapping TypeName="control2_2122Model.tProvincia">
+        <MappingFragment StoreEntitySet="tProvincia">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPruebas">
+      <EntityTypeMapping TypeName="control2_2122Model.tPruebas">
+        <MappingFragment StoreEntitySet="tPruebas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NIF" ColumnName="NIF" />
+          <ScalarProperty Name="fecha_hora" ColumnName="fecha_hora" />
+          <ScalarProperty Name="valor_glucosa" ColumnName="valor_glucosa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tReferenciasGlucosa">
+      <EntityTypeMapping TypeName="control2_2122Model.tReferenciasGlucosa">
+        <MappingFragment StoreEntitySet="tReferenciasGlucosa">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="desde" ColumnName="desde" />
+          <ScalarProperty Name="hasta" ColumnName="hasta" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

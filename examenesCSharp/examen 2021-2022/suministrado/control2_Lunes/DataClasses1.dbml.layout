@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="ad38b08b-0f22-4cb2-92bf-28fd41acdcf3" absoluteBounds="3.5, 1, 2, 3.1170068359375009">
+      <DataClassMoniker Name="/DataClasses1DataContext/Lunes_tPaciente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7886d64-556e-45b4-b8a5-9c056a7ce055" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6cdd2c8f-d5ee-4d2b-9e7d-814840a0d864" absoluteBounds="0.75, 5.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Lunes_tReferenciasGlucosa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9a52ec3-d62c-44fb-9df4-9dafc0376467" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d9ac40b-3a8f-4380-966d-d051724be3ef" absoluteBounds="0.75, 2, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataClasses1DataContext/Lunes_tProvincia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d55a6d39-5b91-4c2a-9d1f-eac80fd790f1" absoluteBounds="0.765, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bad59c2b-0773-4e9a-bf21-6df34a6eaa84" absoluteBounds="6.25, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Lunes_tPruebas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5400821a-44fc-491f-a348-1eb3a7694022" absoluteBounds="6.265, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.59699625651042); (3.5 : 2.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Lunes_tProvincia/Lunes_tProvincia_Lunes_tPaciente" />
+      <nodes>
+        <classShapeMoniker Id="5d9ac40b-3a8f-4380-966d-d051724be3ef" />
+        <classShapeMoniker Id="ad38b08b-0f22-4cb2-92bf-28fd41acdcf3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.53929768880208); (6.25 : 2.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Lunes_tPaciente/Lunes_tPaciente_Lunes_tPruebas" />
+      <nodes>
+        <classShapeMoniker Id="ad38b08b-0f22-4cb2-92bf-28fd41acdcf3" />
+        <classShapeMoniker Id="bad59c2b-0773-4e9a-bf21-6df34a6eaa84" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

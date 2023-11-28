@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IMPERIALModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tNave">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Capitan" Type="varchar" MaxLength="50" />
+    <Property Name="PlanetaFabricacion" Type="varchar" MaxLength="50" />
+    <Property Name="TipoNaveCodigo" Type="int" />
+  </EntityType>
+  <EntityType Name="tTipoNave">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" Nullable="false" />
+    <Property Name="Denominacion" Type="varchar" MaxLength="50" />
+    <Property Name="Longitud" Type="float" />
+    <Property Name="NumTripulantes" Type="int" />
+  </EntityType>
+  <Association Name="FK__Nave__TipoNaveCo__1367E606">
+    <End Role="tTipoNave" Type="Self.tTipoNave" Multiplicity="0..1" />
+    <End Role="tNave" Type="Self.tNave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tTipoNave">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="tNave">
+        <PropertyRef Name="TipoNaveCodigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="IMPERIALModelStoreContainer">
+    <EntitySet Name="tNave" EntityType="Self.tNave" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tTipoNave" EntityType="Self.tTipoNave" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Nave__TipoNaveCo__1367E606" Association="Self.FK__Nave__TipoNaveCo__1367E606">
+      <End Role="tTipoNave" EntitySet="tTipoNave" />
+      <End Role="tNave" EntitySet="tNave" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

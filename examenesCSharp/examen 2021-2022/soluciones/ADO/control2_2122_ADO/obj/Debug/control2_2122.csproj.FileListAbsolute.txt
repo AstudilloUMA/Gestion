@@ -1,0 +1,9 @@
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2\bin\Debug\control2_2122.exe.config
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2\bin\Debug\control2_2122.exe
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2\bin\Debug\control2_2122.pdb
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2\obj\Debug\control2_2122.Properties.Resources.resources
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2\obj\Debug\control2_2122.PRUEBAS.resources
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2\obj\Debug\control2_2122.csproj.GenerateResource.cache
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2\obj\Debug\control2_2122.csproj.CoreCompileInputs.cache
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2\obj\Debug\control2_2122.exe
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2\obj\Debug\control2_2122.pdb

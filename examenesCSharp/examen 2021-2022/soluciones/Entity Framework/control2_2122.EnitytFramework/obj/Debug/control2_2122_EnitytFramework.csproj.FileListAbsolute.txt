@@ -1,0 +1,15 @@
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\obj\Debug\control2_2122_EnitytFramework.csproj.AssemblyReference.cache
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\obj\Debug\control2_2122_EnitytFramework.Properties.Resources.resources
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\obj\Debug\control2_2122_EnitytFramework.PRUEBAS.resources
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\obj\Debug\control2_2122_EnitytFramework.csproj.GenerateResource.cache
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\obj\Debug\control2_2122_EnitytFramework.csproj.CoreCompileInputs.cache
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\bin\Debug\control2_2122_EnitytFramework.exe.config
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\bin\Debug\control2_2122_EnitytFramework.exe
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\bin\Debug\control2_2122_EnitytFramework.pdb
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\bin\Debug\EntityFramework.dll
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\bin\Debug\EntityFramework.SqlServer.dll
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\bin\Debug\EntityFramework.xml
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\bin\Debug\EntityFramework.SqlServer.xml
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\obj\Debug\control2_2122_EnitytFramework.csproj.CopyComplete
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\obj\Debug\control2_2122_EnitytFramework.exe
+E:\pastrana\Gestion de Informacion\curso2021_2022\Control2\control2_2122.EnitytFramework\obj\Debug\control2_2122_EnitytFramework.pdb

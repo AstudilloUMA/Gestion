@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="P2_1920" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=P2_1920;Integrated Security=True" SettingsObjectName="P2LINQ2SQL.Properties.Settings" SettingsPropertyName="P2_1920ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tCatalogo" Member="tCatalogo">
+    <Type Name="tCatalogo">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdProveedor" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="precio" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Association Name="tProveedor_tCatalogo" Member="tProveedor" ThisKey="IdProveedor" OtherKey="IdProveedor" Type="tProveedor" IsForeignKey="true" />
+      <Association Name="tProducto_tCatalogo" Member="tProducto" ThisKey="IdProducto" OtherKey="IdProducto" Type="tProducto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tProveedor" Member="tProveedor">
+    <Type Name="tProveedor">
+      <Column Name="IdProveedor" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Proveedor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tProveedor_tCatalogo" Member="tCatalogo" ThisKey="IdProveedor" OtherKey="IdProveedor" Type="tCatalogo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tProducto" Member="tProducto">
+    <Type Name="tProducto">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NombreProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tProducto_tCatalogo" Member="tCatalogo" ThisKey="IdProducto" OtherKey="IdProducto" Type="tCatalogo" />
+    </Type>
+  </Table>
+</Database>

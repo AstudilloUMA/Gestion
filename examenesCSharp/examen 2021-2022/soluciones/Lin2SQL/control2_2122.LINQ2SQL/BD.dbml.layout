@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BD">
+  <DataContextMoniker Name="/BDDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dbd1811d-3b04-40bb-b45e-af054c12c1ba" absoluteBounds="3.5, 1, 2, 3.1170068359375009">
+      <DataClassMoniker Name="/BDDataContext/tPaciente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a10a89e2-a3bf-4e2d-a060-203a1c1e6b42" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="72c77003-bd9f-4da1-bfa0-889f24dc722c" absoluteBounds="0.75, 5.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDDataContext/tReferenciasGlucosa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b7f7a231-4769-4d50-af54-c2b5856c3979" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f49f1730-471b-427b-b794-d7b3b94e3229" absoluteBounds="0.75, 2, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/BDDataContext/tProvincia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="976cc08a-0b52-422e-b3f2-9c62a3c5e9e2" absoluteBounds="0.765, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4e2be31-719f-4c2c-bae7-1512d8018fc6" absoluteBounds="6.25, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDDataContext/tPruebas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45d7b468-9acb-4ad2-b3bf-2879e8afe79c" absoluteBounds="6.265, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.59699625651042); (3.5 : 2.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDDataContext/tProvincia/tProvincia_tPaciente" />
+      <nodes>
+        <classShapeMoniker Id="f49f1730-471b-427b-b794-d7b3b94e3229" />
+        <classShapeMoniker Id="dbd1811d-3b04-40bb-b45e-af054c12c1ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.53929768880208); (6.25 : 2.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BDDataContext/tPaciente/tPaciente_tPruebas" />
+      <nodes>
+        <classShapeMoniker Id="dbd1811d-3b04-40bb-b45e-af054c12c1ba" />
+        <classShapeMoniker Id="a4e2be31-719f-4c2c-bae7-1512d8018fc6" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

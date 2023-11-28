@@ -1,0 +1,9 @@
+Z:\examenesCSharp\examen 2021-2022\suministrado\control2_Lunes\bin\Debug\control2_Lunes.exe.config
+Z:\examenesCSharp\examen 2021-2022\suministrado\control2_Lunes\bin\Debug\control2_Lunes.exe
+Z:\examenesCSharp\examen 2021-2022\suministrado\control2_Lunes\bin\Debug\control2_Lunes.pdb
+Z:\examenesCSharp\examen 2021-2022\suministrado\control2_Lunes\obj\Debug\control2_Lunes.csprojResolveAssemblyReference.cache
+Z:\examenesCSharp\examen 2021-2022\suministrado\control2_Lunes\obj\Debug\control2_Lunes.Properties.Resources.resources
+Z:\examenesCSharp\examen 2021-2022\suministrado\control2_Lunes\obj\Debug\control2_Lunes.PRUEBAS.resources
+Z:\examenesCSharp\examen 2021-2022\suministrado\control2_Lunes\obj\Debug\control2_Lunes.csproj.GenerateResource.Cache
+Z:\examenesCSharp\examen 2021-2022\suministrado\control2_Lunes\obj\Debug\control2_Lunes.exe
+Z:\examenesCSharp\examen 2021-2022\suministrado\control2_Lunes\obj\Debug\control2_Lunes.pdb

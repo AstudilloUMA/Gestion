@@ -1,0 +1,34 @@
+c:\users\alumno\documents\visual studio 2013\Projects\Imperial\Imperial\bin\Debug\Imperial.exe.config
+c:\users\alumno\documents\visual studio 2013\Projects\Imperial\Imperial\bin\Debug\Imperial.exe
+c:\users\alumno\documents\visual studio 2013\Projects\Imperial\Imperial\bin\Debug\Imperial.pdb
+c:\users\alumno\documents\visual studio 2013\Projects\Imperial\Imperial\obj\Debug\Imperial.csprojResolveAssemblyReference.cache
+c:\users\alumno\documents\visual studio 2013\Projects\Imperial\Imperial\obj\Debug\Imperial.FMantenimiento.resources
+c:\users\alumno\documents\visual studio 2013\Projects\Imperial\Imperial\obj\Debug\Imperial.Properties.Resources.resources
+c:\users\alumno\documents\visual studio 2013\Projects\Imperial\Imperial\obj\Debug\Imperial.csproj.GenerateResource.Cache
+c:\users\alumno\documents\visual studio 2013\Projects\Imperial\Imperial\obj\Debug\Imperial.exe
+c:\users\alumno\documents\visual studio 2013\Projects\Imperial\Imperial\obj\Debug\Imperial.pdb
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\bin\Debug\Imperial.exe.config
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\bin\Debug\Imperial.exe
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\bin\Debug\Imperial.pdb
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\bin\Debug\EntityFramework.dll
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\bin\Debug\EntityFramework.xml
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\obj\Debug\Imperial.FMantenimiento.resources
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\obj\Debug\Imperial.Properties.Resources.resources
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\obj\Debug\Imperial.csproj.GenerateResource.Cache
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\obj\Debug\Imperial.exe
+C:\Users\alumno\Downloads\ImperialAlumnos\Imperial\obj\Debug\Imperial.pdb
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\bin\Debug\Imperial.exe.config
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\obj\Debug\Imperial.exe
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\obj\Debug\Imperial.pdb
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\bin\Debug\Imperial.exe
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\bin\Debug\Imperial.pdb
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\bin\Debug\EntityFramework.dll
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\bin\Debug\EntityFramework.SqlServer.dll
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\bin\Debug\EntityFramework.xml
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\bin\Debug\EntityFramework.SqlServer.xml
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\obj\Debug\Imperial.csprojResolveAssemblyReference.cache
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\obj\Debug\Imperial.FMantenimiento.resources
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\obj\Debug\Imperial.Properties.Resources.resources
+Z:\examenesCSharp\ex2023\ImperialAlumnos\Imperial\obj\Debug\Imperial.csproj.GenerateResource.Cache

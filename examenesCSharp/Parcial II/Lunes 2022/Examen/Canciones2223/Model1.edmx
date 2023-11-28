@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Asistencia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CENTRO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MOTIVO" Type="int" Nullable="false" />
+          <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="NUMERO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Centro">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MOTIVO_CONSULTA">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="int" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Asistencia_Centro1">
+          <End Role="Centro" Type="Self.Centro" Multiplicity="1" />
+          <End Role="Asistencia" Type="Self.Asistencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Centro">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="Asistencia">
+              <PropertyRef Name="CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_MOTIVO_CONSULTA">
+          <End Role="MOTIVO_CONSULTA" Type="Self.MOTIVO_CONSULTA" Multiplicity="1" />
+          <End Role="Asistencia" Type="Self.Asistencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOTIVO_CONSULTA">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="Asistencia">
+              <PropertyRef Name="MOTIVO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HospitalModelStoreContainer">
+          <EntitySet Name="Asistencia" EntityType="Self.Asistencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Centro" EntityType="Self.Centro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MOTIVO_CONSULTA" EntityType="Self.MOTIVO_CONSULTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Asistencia_Centro1" Association="Self.FK_Asistencia_Centro1">
+            <End Role="Centro" EntitySet="Centro" />
+            <End Role="Asistencia" EntitySet="Asistencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_MOTIVO_CONSULTA" Association="Self.FK_Asistencia_MOTIVO_CONSULTA">
+            <End Role="MOTIVO_CONSULTA" EntitySet="MOTIVO_CONSULTA" />
+            <End Role="Asistencia" EntitySet="Asistencia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HospitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Asistencia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CENTRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MOTIVO" Type="Int32" Nullable="false" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NUMERO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Centro1" Relationship="Self.FK_Asistencia_Centro1" FromRole="Asistencia" ToRole="Centro" />
+          <NavigationProperty Name="MOTIVO_CONSULTA" Relationship="Self.FK_Asistencia_MOTIVO_CONSULTA" FromRole="Asistencia" ToRole="MOTIVO_CONSULTA" />
+        </EntityType>
+        <EntityType Name="Centro">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Asistencia" Relationship="Self.FK_Asistencia_Centro1" FromRole="Centro" ToRole="Asistencia" />
+        </EntityType>
+        <EntityType Name="MOTIVO_CONSULTA">
+          <Key>
+            <PropertyRef Name="CODIGO" />
+          </Key>
+          <Property Name="CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Asistencia" Relationship="Self.FK_Asistencia_MOTIVO_CONSULTA" FromRole="MOTIVO_CONSULTA" ToRole="Asistencia" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Asistencia_Centro1">
+          <End Role="Centro" Type="Self.Centro" Multiplicity="1" />
+          <End Role="Asistencia" Type="Self.Asistencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Centro">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="Asistencia">
+              <PropertyRef Name="CENTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Asistencia_MOTIVO_CONSULTA">
+          <End Role="MOTIVO_CONSULTA" Type="Self.MOTIVO_CONSULTA" Multiplicity="1" />
+          <End Role="Asistencia" Type="Self.Asistencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MOTIVO_CONSULTA">
+              <PropertyRef Name="CODIGO" />
+            </Principal>
+            <Dependent Role="Asistencia">
+              <PropertyRef Name="MOTIVO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HospitalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Asistencia" EntityType="Self.Asistencia" />
+          <EntitySet Name="Centro" EntityType="Self.Centro" />
+          <EntitySet Name="MOTIVO_CONSULTA" EntityType="Self.MOTIVO_CONSULTA" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Asistencia_Centro1" Association="Self.FK_Asistencia_Centro1">
+            <End Role="Centro" EntitySet="Centro" />
+            <End Role="Asistencia" EntitySet="Asistencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Asistencia_MOTIVO_CONSULTA" Association="Self.FK_Asistencia_MOTIVO_CONSULTA">
+            <End Role="MOTIVO_CONSULTA" EntitySet="MOTIVO_CONSULTA" />
+            <End Role="Asistencia" EntitySet="Asistencia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HospitalModelStoreContainer" CdmEntityContainer="HospitalEntities">
+          <EntitySetMapping Name="Asistencia">
+            <EntityTypeMapping TypeName="HospitalModel.Asistencia">
+              <MappingFragment StoreEntitySet="Asistencia">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CENTRO" ColumnName="CENTRO" />
+                <ScalarProperty Name="MOTIVO" ColumnName="MOTIVO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Centro">
+            <EntityTypeMapping TypeName="HospitalModel.Centro">
+              <MappingFragment StoreEntitySet="Centro">
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MOTIVO_CONSULTA">
+            <EntityTypeMapping TypeName="HospitalModel.MOTIVO_CONSULTA">
+              <MappingFragment StoreEntitySet="MOTIVO_CONSULTA">
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="HospitalModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

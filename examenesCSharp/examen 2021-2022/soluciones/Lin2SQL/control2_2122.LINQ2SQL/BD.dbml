@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="control2_2122" Class="BDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=control2_2122;Integrated Security=True" SettingsObjectName="control2_2122_LINQ2SQL.Properties.Settings" SettingsPropertyName="control2_2122ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tPaciente" Member="tPaciente">
+    <Type Name="tPaciente">
+      <Column Name="NIF" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NumSeguro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Poblacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPostal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="e_mail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tPaciente_tPruebas" Member="tPruebas" ThisKey="NIF" OtherKey="NIF" Type="tPruebas" />
+      <Association Name="tProvincia_tPaciente" Member="tProvincia" ThisKey="Provincia" OtherKey="Codigo" Type="tProvincia" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tReferenciasGlucosa" Member="tReferenciasGlucosa">
+    <Type Name="tReferenciasGlucosa">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="desde" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="hasta" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="categoria" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tProvincia" Member="tProvincia">
+    <Type Name="tProvincia">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tProvincia_tPaciente" Member="tPaciente" ThisKey="Codigo" OtherKey="Provincia" Type="tPaciente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPruebas" Member="tPruebas">
+    <Type Name="tPruebas">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NIF" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_hora" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="valor_glucosa" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Association Name="tPaciente_tPruebas" Member="tPaciente" ThisKey="NIF" OtherKey="NIF" Type="tPaciente" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

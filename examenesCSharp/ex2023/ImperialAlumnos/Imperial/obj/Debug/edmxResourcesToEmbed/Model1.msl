@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IMPERIALModelStoreContainer" CdmEntityContainer="IMPERIALEntities">
+    <EntitySetMapping Name="tNave">
+      <EntityTypeMapping TypeName="IMPERIALModel.tNave">
+        <MappingFragment StoreEntitySet="tNave">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Capitan" ColumnName="Capitan" />
+          <ScalarProperty Name="PlanetaFabricacion" ColumnName="PlanetaFabricacion" />
+          <ScalarProperty Name="TipoNaveCodigo" ColumnName="TipoNaveCodigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tTipoNave">
+      <EntityTypeMapping TypeName="IMPERIALModel.tTipoNave">
+        <MappingFragment StoreEntitySet="tTipoNave">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Denominacion" ColumnName="Denominacion" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="NumTripulantes" ColumnName="NumTripulantes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

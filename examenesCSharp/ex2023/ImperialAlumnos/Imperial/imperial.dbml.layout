@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="imperial">
+  <DataContextMoniker Name="/imperialDataContext" />
+  <nestedChildShapes>
+    <classShape Id="db36f1d3-c642-4831-97a2-5cb0d6fe5957" absoluteBounds="3.5, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/imperialDataContext/Nave" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a30ab586-6f0b-4fe4-b32b-78b200510755" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="075af25b-50d4-44cb-b241-466b3e5783e1" absoluteBounds="0.75, 0.875, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/imperialDataContext/TipoNave" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3c6e8375-98a5-4003-a01c-9ddf3bbc0842" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.66429768880208); (3.5 : 1.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/imperialDataContext/TipoNave/TipoNave_Nave" />
+      <nodes>
+        <classShapeMoniker Id="075af25b-50d4-44cb-b241-466b3e5783e1" />
+        <classShapeMoniker Id="db36f1d3-c642-4831-97a2-5cb0d6fe5957" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

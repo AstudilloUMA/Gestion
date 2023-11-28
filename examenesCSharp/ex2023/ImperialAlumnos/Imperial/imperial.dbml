@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IMPERIAL" Class="imperialDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=IMPERIAL;Integrated Security=True" SettingsObjectName="Imperial.Properties.Settings" SettingsPropertyName="IMPERIALConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Nave" Member="Nave">
+    <Type Name="Nave">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Capitan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PlanetaFabricacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoNaveCodigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TipoNave_Nave" Member="TipoNave" ThisKey="TipoNaveCodigo" OtherKey="Codigo" Type="TipoNave" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoNave" Member="TipoNave">
+    <Type Name="TipoNave">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Denominacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Longitud" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NumTripulantes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TipoNave_Nave" Member="Nave" ThisKey="Codigo" OtherKey="TipoNaveCodigo" Type="Nave" />
+    </Type>
+  </Table>
+</Database>

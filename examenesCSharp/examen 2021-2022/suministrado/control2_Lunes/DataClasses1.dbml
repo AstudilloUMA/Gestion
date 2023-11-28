@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="control2_Lunes" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=control2_Lunes;Integrated Security=True" SettingsObjectName="control2_Lunes.Properties.Settings" SettingsPropertyName="control2_LunesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Lunes_tPaciente" Member="Lunes_tPaciente">
+    <Type Name="Lunes_tPaciente">
+      <Column Name="NIF" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NumSeguro" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Poblacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPostal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="e_mail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Lunes_tPaciente_Lunes_tPruebas" Member="Lunes_tPruebas" ThisKey="NIF" OtherKey="NIF" Type="Lunes_tPruebas" />
+      <Association Name="Lunes_tProvincia_Lunes_tPaciente" Member="Lunes_tProvincia" ThisKey="Provincia" OtherKey="Codigo" Type="Lunes_tProvincia" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lunes_tReferenciasGlucosa" Member="Lunes_tReferenciasGlucosa">
+    <Type Name="Lunes_tReferenciasGlucosa">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="desde" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="hasta" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="categoria" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lunes_tProvincia" Member="Lunes_tProvincia">
+    <Type Name="Lunes_tProvincia">
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Lunes_tProvincia_Lunes_tPaciente" Member="Lunes_tPaciente" ThisKey="Codigo" OtherKey="Provincia" Type="Lunes_tPaciente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lunes_tPruebas" Member="Lunes_tPruebas">
+    <Type Name="Lunes_tPruebas">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NIF" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_hora" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="valor_glucosa" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Association Name="Lunes_tPaciente_Lunes_tPruebas" Member="Lunes_tPaciente" ThisKey="NIF" OtherKey="NIF" Type="Lunes_tPaciente" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

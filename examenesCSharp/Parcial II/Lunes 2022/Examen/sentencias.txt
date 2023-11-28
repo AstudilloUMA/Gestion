@@ -1,0 +1,10 @@
+insert into Centro values (1, 'carlos haya1')
+insert into Centro values (2, 'carlos haya2')
+insert into Centro values (3, 'carlos haya3')
+insert into Centro values (4, 'carlos haya4')
+insert into Centro values (5, 'carlos haya5')
+
+insert into MOTIVO_CONSULTA values (1, 'abortame papi');
+insert into MOTIVO_CONSULTA values (2, 'tetano');
+insert into MOTIVO_CONSULTA values (3, 'tetasi');
+insert into MOTIVO_CONSULTA values (4, 'pastrana malageño');

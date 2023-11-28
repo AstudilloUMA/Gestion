@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="IMPERIALModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tNave">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Capitan" Type="varchar" MaxLength="50" />
+          <Property Name="PlanetaFabricacion" Type="varchar" MaxLength="50" />
+          <Property Name="TipoNaveCodigo" Type="int" />
+        </EntityType>
+        <EntityType Name="tTipoNave">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Denominacion" Type="varchar" MaxLength="50" />
+          <Property Name="Longitud" Type="float" />
+          <Property Name="NumTripulantes" Type="int" />
+        </EntityType>
+        <Association Name="FK__Nave__TipoNaveCo__1367E606">
+          <End Role="tTipoNave" Type="Self.tTipoNave" Multiplicity="0..1" />
+          <End Role="tNave" Type="Self.tNave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tTipoNave">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tNave">
+              <PropertyRef Name="TipoNaveCodigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IMPERIALModelStoreContainer">
+          <EntitySet Name="tNave" EntityType="Self.tNave" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tTipoNave" EntityType="Self.tTipoNave" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Nave__TipoNaveCo__1367E606" Association="Self.FK__Nave__TipoNaveCo__1367E606">
+            <End Role="tTipoNave" EntitySet="tTipoNave" />
+            <End Role="tNave" EntitySet="tNave" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IMPERIALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tNave">
+          <Key>
+            <PropertyRef Name="Nombre" />
+          </Key>
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Capitan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PlanetaFabricacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TipoNaveCodigo" Type="Int32" />
+          <NavigationProperty Name="tTipoNave" Relationship="Self.FK__Nave__TipoNaveCo__1367E606" FromRole="tNave" ToRole="tTipoNave" />
+        </EntityType>
+        <EntityType Name="tTipoNave">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Denominacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Longitud" Type="Double" />
+          <Property Name="NumTripulantes" Type="Int32" />
+          <NavigationProperty Name="tNave" Relationship="Self.FK__Nave__TipoNaveCo__1367E606" FromRole="tTipoNave" ToRole="tNave" />
+        </EntityType>
+        <Association Name="FK__Nave__TipoNaveCo__1367E606">
+          <End Role="tTipoNave" Type="Self.tTipoNave" Multiplicity="0..1" />
+          <End Role="tNave" Type="Self.tNave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tTipoNave">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="tNave">
+              <PropertyRef Name="TipoNaveCodigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IMPERIALEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tNave" EntityType="Self.tNave" />
+          <EntitySet Name="tTipoNave" EntityType="Self.tTipoNave" />
+          <AssociationSet Name="FK__Nave__TipoNaveCo__1367E606" Association="Self.FK__Nave__TipoNaveCo__1367E606">
+            <End Role="tTipoNave" EntitySet="tTipoNave" />
+            <End Role="tNave" EntitySet="tNave" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IMPERIALModelStoreContainer" CdmEntityContainer="IMPERIALEntities">
+          <EntitySetMapping Name="tNave">
+            <EntityTypeMapping TypeName="IMPERIALModel.tNave">
+              <MappingFragment StoreEntitySet="tNave">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Capitan" ColumnName="Capitan" />
+                <ScalarProperty Name="PlanetaFabricacion" ColumnName="PlanetaFabricacion" />
+                <ScalarProperty Name="TipoNaveCodigo" ColumnName="TipoNaveCodigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tTipoNave">
+            <EntityTypeMapping TypeName="IMPERIALModel.tTipoNave">
+              <MappingFragment StoreEntitySet="tTipoNave">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Denominacion" ColumnName="Denominacion" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="NumTripulantes" ColumnName="NumTripulantes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

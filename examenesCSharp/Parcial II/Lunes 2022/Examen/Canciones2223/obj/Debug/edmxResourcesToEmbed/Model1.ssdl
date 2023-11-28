@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Asistencia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CENTRO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MOTIVO" Type="int" Nullable="false" />
+    <Property Name="FECHA" Type="date" Nullable="false" />
+    <Property Name="NUMERO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Centro">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MOTIVO_CONSULTA">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Asistencia_Centro1">
+    <End Role="Centro" Type="Self.Centro" Multiplicity="1" />
+    <End Role="Asistencia" Type="Self.Asistencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Centro">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="Asistencia">
+        <PropertyRef Name="CENTRO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asistencia_MOTIVO_CONSULTA">
+    <End Role="MOTIVO_CONSULTA" Type="Self.MOTIVO_CONSULTA" Multiplicity="1" />
+    <End Role="Asistencia" Type="Self.Asistencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MOTIVO_CONSULTA">
+        <PropertyRef Name="CODIGO" />
+      </Principal>
+      <Dependent Role="Asistencia">
+        <PropertyRef Name="MOTIVO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HospitalModelStoreContainer">
+    <EntitySet Name="Asistencia" EntityType="Self.Asistencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Centro" EntityType="Self.Centro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MOTIVO_CONSULTA" EntityType="Self.MOTIVO_CONSULTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Asistencia_Centro1" Association="Self.FK_Asistencia_Centro1">
+      <End Role="Centro" EntitySet="Centro" />
+      <End Role="Asistencia" EntitySet="Asistencia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asistencia_MOTIVO_CONSULTA" Association="Self.FK_Asistencia_MOTIVO_CONSULTA">
+      <End Role="MOTIVO_CONSULTA" EntitySet="MOTIVO_CONSULTA" />
+      <End Role="Asistencia" EntitySet="Asistencia" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
